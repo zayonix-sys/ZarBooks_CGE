@@ -29,9 +29,99 @@
 
 ---
 
-## 📂 Installation
+## 📂 Installation & Setup
 
-1. Clone the repository:
-   ```bash
-   git clone https://github.com/zayonix-sys/ZarBooks_CGE.git
-   cd ZarBooks_CGE
+Follow these steps to set up the project locally:
+
+### 1. Clone the Repository
+git clone https://github.com/zayonix-sys/ZarBooks_CGE.git
+cd ZarBooks_CGE
+
+
+### 2. Install Dependencies
+composer install
+npm install
+
+
+### 3. Build Frontend Assets
+npm run dev
+
+(For production use `npm run build`)
+
+### 4. Copy Environment File
+cp .env.example .env
+
+
+### 5. Configure Environment
+Open the `.env` file and set up your database credentials and other environment settings:
+
+
+APP_NAME="ZarBooks"
+APP_ENV=local
+APP_KEY=
+APP_DEBUG=true
+APP_URL=http://localhost
+
+DB_CONNECTION=mysql
+DB_HOST=127.0.0.1
+DB_PORT=3306
+DB_DATABASE=zarbooks_db
+DB_USERNAME=root
+DB_PASSWORD=
+
+
+### 6. Generate Application Key
+php artisan key:generate
+
+
+### 7. Run Database Migrations & Seeders
+php artisan migrate --seed
+
+### 8. Link Storage (for file uploads, logs, etc.)
+php artisan storage:link
+
+### 9. Clear & Cache Configurations (optional but recommended)
+php artisan config:clear
+php artisan cache:clear
+php artisan route:clear
+php artisan view:clear
+
+### 10. Start the Development Server
+php artisan serve
+
+Your project should now be available at:  
+👉 `http://localhost:8000`
+
+---
+
+## 📖 Usage
+
+- Login with default seeded credentials:  
+  - **Email:** `admin@example.com`  
+  - **Password:** `password`  
+
+- Navigate through:  
+  - **Chart of Accounts** → Manage accounts  
+  - **Transactions & Vouchers** → Record debit/credit/journal vouchers  
+  - **Reports** → Generate trial balance, income statement, and balance sheet  
+
+---
+
+## 🤝 Contributing
+
+Contributions are welcome!  
+1. Fork the repository  
+2. Create a feature branch (`git checkout -b feature/new-feature`)  
+3. Commit changes (`git commit -m "Add new feature"`)  
+4. Push to branch (`git push origin feature/new-feature`)  
+5. Open a Pull Request  
+
+---
+
+## 📜 License
+
+This project is licensed under the [MIT License](LICENSE).
+
+---
+
+### ⭐ If you find this project useful, please consider giving it a star on GitHub!
