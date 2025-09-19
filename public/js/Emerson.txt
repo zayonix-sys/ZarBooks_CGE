@@ -1,0 +1,3 @@
+Device Name: Local Hard Drive (RSA)
+Device Serial Number: 2a28a5419d9e03adadd0
+Device Type: {b57ed41b-cd67-4bac-85ab-19722fcd4498}

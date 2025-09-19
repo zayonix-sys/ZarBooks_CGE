@@ -1,0 +1,30 @@
+<?php
+
+namespace App\Http\Requests\Maintain;
+
+use Illuminate\Foundation\Http\FormRequest;
+
+class StoreCashPaymentAccountRequest extends FormRequest
+{
+    /**
+     * Determine if the user is authorized to make this request.
+     *
+     * @return bool
+     */
+    public function authorize()
+    {
+        return true;
+    }
+
+    /**
+     * Get the validation rules that apply to the request.
+     *
+     * @return array<string, mixed>
+     */
+    public function rules()
+    {
+        return [
+            'cash_payment' => 'required|array|min:1',
+        ];
+    }
+}
